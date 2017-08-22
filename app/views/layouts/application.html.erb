@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Rails With Bootstrap 4 and Postgres</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="<%= root_path %>"><i class="fa fa-hashtag"></i> Rails App</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="<%= root_path %>">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<%= blogs_path %>">Blogs</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container text-center" style="margin-top: 20px">
+      <h1 class="display-3" style="font-weight: 500"><img src="https://cdn4.iconfinder.com/data/icons/scripting-and-programming-languages/158/Ruby_on_Rails_2-512.png" style="width: 100px"> Hello, Rails!</h1>
+      <p style="font-size: 20px"> I Create App Use Rails 5 + Bootsrap 4 + Postgres  </p>
+      <p><a class="btn btn-primary btn-lg" href="#" role="button"><i class="fa fa-github"></i> See Repository </a></p>
+    </div>
+  </div>
+
+    <%= yield %>
+
+  <hr>
+
+  <footer>
+    <p>&copy; Company 2017</p>
+  </footer>
+  </div> <!-- /container -->
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload', 'data-turbolinks-eval': 'false' %>
+  </body>
+  </html>
+
+</body>
+
+</html>
