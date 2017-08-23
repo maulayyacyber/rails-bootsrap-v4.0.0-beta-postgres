@@ -4,25 +4,26 @@
   <!-- Example row of columns -->
   <div class="row">
     <div class="col-md-12">
-
-
+      <%= link_to 'New Blog', new_blog_path, class: 'btn btn-primary sm' %>
+    </div>
     <% @blogs.each do |blog| %>
-
-        <div class="card" style="width: 20rem;">
-          <img class="card-img-top" src="https://semantic-ui.com/images/wireframe/image.png" alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title"><%= blog.title %></h4>
-            <p class="card-text"><%= blog.content %></p>
-            <a href="#" class="btn btn-primary">Selengkapnya</a>
-          </div>
+        <div class="col-md-4" style="margin-top: 20px">
+                <div class="card" style="width: 20rem;">
+                  <%= image_tag blog.thumbnail.url(:medium), class: 'card-img-top', style: ' min-height: 180px;max-height: 180px;' %>
+                  <div class="card-body">
+                    <h4 class="card-title"><%= blog.title %></h4>
+                    <p class="card-text"><%= blog.content %></p>
+                    <%= link_to edit_blog_path(blog), class: 'btn btn-danger sm' do %><i class="fa fa-pencil"></i> Edit <% end %>
+                    <%= link_to blog, class: 'btn btn-primary sm' do %> Selengkapnya <i class="fa fa-external-link"></i><% end %>
+                  </div>
+                </div>
         </div>
-     </div>
+      <% end %>
   </div>
 
-    <% end %>
+</div>
 
 
 
-<!--
-<%= link_to 'New Blog', new_blog_path %>
--->
+
+

@@ -2,17 +2,31 @@
 <div class="jumbotron">
   <div class="container text-center" style="margin-top: 20px">
     <h1 class="display-3" style="font-weight: 500"><img src="https://cdn4.iconfinder.com/data/icons/scripting-and-programming-languages/158/Ruby_on_Rails_2-512.png" style="width: 100px"> Hello, Rails!</h1>
-    <p style="font-size: 20px"> I Create App Use Rails 5 + Bootsrap 4 + Postgres  </p>
+    <p style="font-size: 20px"> I Create App Use Rails 5 + Bootsrap 4 + PostgreSQL  </p>
     <p><a class="btn btn-primary btn-lg" href="https://github.com/maulayyacyber/rails-bootsrap-v4.0.0-beta-postgres" role="button"><i class="fa fa-github"></i> See Repository </a></p>
   </div>
 </div>
 
 </div>
-<div class="container" style="margin-top: 80px">
+<div class="container" style="margin-top: 20px">
   <!-- Example row of columns -->
   <div class="row">
     <div class="col-md-12">
-
+      <%= link_to 'New Blog', new_blog_path, class: 'btn btn-primary sm' %>
+    </div>
+    <% @blogs.each do |blog| %>
+        <div class="col-md-4" style="margin-top: 20px">
+          <div class="card" style="width: 20rem;">
+            <%= image_tag blog.thumbnail.url(:medium), class: 'card-img-top', style: ' min-height: 180px;max-height: 180px;' %>
+            <div class="card-body">
+              <h4 class="card-title"><%= blog.title %></h4>
+              <p class="card-text"><%= blog.content %></p>
+              <%= link_to edit_blog_path(blog), class: 'btn btn-danger sm' do %><i class="fa fa-pencil"></i> Edit <% end %>
+              <%= link_to blog, class: 'btn btn-primary sm' do %> Selengkapnya <i class="fa fa-external-link"></i><% end %>
+            </div>
+          </div>
+        </div>
+    <% end %>
   </div>
-  </div>
 
+</div>
